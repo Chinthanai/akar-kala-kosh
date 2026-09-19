@@ -75,6 +75,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -82,6 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "PYAR Architects — Bangalore" },
       { name: "description", content: "Architecture, interiors and construction shaped with clarity and purpose in Bangalore." },
       { name: "author", content: "PYAR Architects" },
+      { name: "google-site-verification", content: "mfd8m4YUvjFYu5iXsbmMkscQqsTuK9AGJkz1CCkz5d4" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

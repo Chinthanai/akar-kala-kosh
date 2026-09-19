@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { PageHero, Reveal } from "@/components/SiteChrome";
 import { images } from "@/lib/site-data";
 
-export const Route = createFileRoute("/contact")({ head: () => ({ meta: [
+export const Route = createFileRoute("/contact")({ staticData: { sitemap: true }, head: () => ({ meta: [
   { title: "Contact PYAR Architects | Bangalore" }, { name: "description", content: "Start your architecture, interior design or construction project with PYAR Architects in Bangalore." },
   { property: "og:title", content: "Contact PYAR Architects" }, { property: "og:description", content: "Tell us about the space you want to create." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
 ]}), component: ContactPage });

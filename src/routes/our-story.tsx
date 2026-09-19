@@ -4,6 +4,7 @@ import { PageHero, Reveal } from "@/components/SiteChrome";
 import { images } from "@/lib/site-data";
 
 export const Route = createFileRoute("/our-story")({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: "Our Story | PYAR Architects" }, { name: "description", content: "Meet the philosophy, people and journey behind Bangalore design studio PYAR Architects." },
     { property: "og:title", content: "Our Story | PYAR Architects" }, { property: "og:description", content: "Youthful vision and enduring design, from 2018 to today." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero, Reveal } from "@/components/SiteChrome";
 import { images, projects } from "@/lib/site-data";
 
-export const Route = createFileRoute("/projects")({ head: () => ({ meta: [
+export const Route = createFileRoute("/projects")({ staticData: { sitemap: true }, head: () => ({ meta: [
   { title: "Projects | PYAR Architects Bangalore" }, { name: "description", content: "Explore residential, commercial, interior and renovation work by PYAR Architects." },
   { property: "og:title", content: "Selected Projects | PYAR Architects" }, { property: "og:description", content: "Architecture and interiors made with precision across Karnataka." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
 ]}), component: ProjectsPage });
