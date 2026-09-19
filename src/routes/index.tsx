@@ -7,6 +7,7 @@ import { Reveal } from "@/components/SiteChrome";
 import { images, projects } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: "PYAR Architects | Architecture & Interiors Bangalore" },
     { name: "description", content: "PYAR Architects creates exceptional architecture, interiors and buildings across Bangalore and beyond." },
