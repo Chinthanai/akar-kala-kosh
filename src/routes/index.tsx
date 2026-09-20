@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, DraftingCompass, Hammer, PanelsTopLeft, Star, X } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/SiteChrome";
@@ -14,7 +14,8 @@ export const Route = createFileRoute("/")({
     { property: "og:title", content: "PYAR Architects — Designing Spaces. Defining Lives." },
     { property: "og:description", content: "A Bangalore architecture, interior design and construction studio." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-  ]}),
+    { property: "og:url", content: "https://pyar-architects-showcase.lovable.app/" },
+  ], links: [{ rel: "canonical", href: "https://pyar-architects-showcase.lovable.app/" }]}),
   component: HomePage,
 });
 
@@ -27,11 +28,8 @@ const services = [
 
 function HomePage() {
   const [selected, setSelected] = useState<(typeof projects)[number] | null>(null);
-  const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 900], [0, 180]);
   return <>
-    <section className="relative flex min-h-[92vh] items-end overflow-hidden px-5 pb-16 pt-32 sm:px-8 lg:pb-20">
-      <motion.img style={{ y: heroY }} src={images.residence} alt="Contemporary Bangalore residence by PYAR Architects" width={1920} height={1200} className="absolute -inset-y-24 left-0 h-[calc(100%+12rem)] w-full object-cover" />
+    <section className="hero-background relative flex min-h-[92vh] items-end overflow-hidden px-5 pb-16 pt-32 sm:px-8 lg:pb-20">
       <div className="absolute inset-0 bg-hero" />
       <div className="relative mx-auto w-full max-w-7xl">
         <p className="label">Bangalore · India</p>
