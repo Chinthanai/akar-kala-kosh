@@ -9,7 +9,10 @@ import { images, projects } from "@/lib/site-data";
 export const Route = createFileRoute("/projects")({ staticData: { sitemap: true }, head: () => ({ meta: [
   { title: "Projects | PYAR Architects Bangalore" }, { name: "description", content: "Explore residential, commercial, interior and renovation work by PYAR Architects." },
   { property: "og:title", content: "Selected Projects | PYAR Architects" }, { property: "og:description", content: "Architecture and interiors made with precision across Karnataka." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-]}), component: ProjectsPage });
+  { property: "og:url", content: "https://pyararchitects.com/projects" },
+  { property: "og:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+  { name: "twitter:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+], links: [{ rel: "canonical", href: "https://pyararchitects.com/projects" }] }), component: ProjectsPage });
 
 function ProjectsPage() {
   const [filter,setFilter]=useState("All"); const [selected,setSelected]=useState<(typeof projects)[number]|null>(null);

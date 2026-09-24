@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteChrome } from "../components/SiteChrome";
 import { Button } from "../components/ui/button";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -78,12 +79,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   staticData: { sitemap: false },
   head: () => ({
     meta: [
+      { name: "google-site-verification", content: "mfd8m4YUvjFYu5iXsbmMkscQqsTuK9AGJkz1CCkz5d4" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "PYAR Architects — Bangalore" },
       { name: "description", content: "Architecture, interiors and construction shaped with clarity and purpose in Bangalore." },
       { name: "author", content: "PYAR Architects" },
-      { name: "google-site-verification", content: "mfd8m4YUvjFYu5iXsbmMkscQqsTuK9AGJkz1CCkz5d4" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -92,10 +93,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/logo.png" },
+      { rel: "apple-touch-icon", href: "/logo.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "PYAR Architects",
+          url: "https://pyararchitects.com",
+          telephone: "+918438312410",
+          email: "pyararchitects@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Bangalore",
+            addressCountry: "IN",
+          },
+          sameAs: ["https://www.instagram.com/pyar_architects"],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -125,6 +146,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SiteChrome><Outlet /></SiteChrome>
+      <Toaster />
     </QueryClientProvider>
   );
 }

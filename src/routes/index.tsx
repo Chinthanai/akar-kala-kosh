@@ -14,8 +14,10 @@ export const Route = createFileRoute("/")({
     { property: "og:title", content: "PYAR Architects — Designing Spaces. Defining Lives." },
     { property: "og:description", content: "A Bangalore architecture, interior design and construction studio." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-    { property: "og:url", content: "https://pyar-architects-showcase.lovable.app/" },
-  ], links: [{ rel: "canonical", href: "https://pyar-architects-showcase.lovable.app/" }]}),
+    { property: "og:url", content: "https://pyararchitects.com/" },
+    { property: "og:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+    { name: "twitter:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+  ], links: [{ rel: "canonical", href: "https://pyararchitects.com/" }]}),
   component: HomePage,
 });
 

@@ -10,7 +10,10 @@ import { images } from "@/lib/site-data";
 export const Route = createFileRoute("/contact")({ staticData: { sitemap: true }, head: () => ({ meta: [
   { title: "Contact PYAR Architects | Bangalore" }, { name: "description", content: "Start your architecture, interior design or construction project with PYAR Architects in Bangalore." },
   { property: "og:title", content: "Contact PYAR Architects" }, { property: "og:description", content: "Tell us about the space you want to create." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-]}), component: ContactPage });
+  { property: "og:url", content: "https://pyararchitects.com/contact" },
+  { property: "og:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+  { name: "twitter:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+], links: [{ rel: "canonical", href: "https://pyararchitects.com/contact" }] }), component: ContactPage });
 
 function ContactPage() {
   const [sent,setSent]=useState(false);

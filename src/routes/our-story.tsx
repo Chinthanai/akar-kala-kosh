@@ -8,7 +8,10 @@ export const Route = createFileRoute("/our-story")({
   head: () => ({ meta: [
     { title: "Our Story | PYAR Architects" }, { name: "description", content: "Meet the philosophy, people and journey behind Bangalore design studio PYAR Architects." },
     { property: "og:title", content: "Our Story | PYAR Architects" }, { property: "og:description", content: "Youthful vision and enduring design, from 2018 to today." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-  ]}), component: StoryPage,
+    { property: "og:url", content: "https://pyararchitects.com/our-story" },
+    { property: "og:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+    { name: "twitter:image", content: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" },
+  ], links: [{ rel: "canonical", href: "https://pyararchitects.com/our-story" }]}), component: StoryPage,
 });
 
 function StoryPage() {
