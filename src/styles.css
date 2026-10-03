@@ -47,7 +47,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
+  --color-ring-offset-background: var(--ring-offset-background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -96,7 +96,7 @@
   --surface: oklch(0.18 0.005 70);
   --glass: oklch(0.4 0.008 70 / 18%);
   --overlay: oklch(0.12 0.004 70 / 92%);
-  --nav: oklch(0.14 0.004 70 / 78%);
+  --nav: oklch(0.208 0.002 70 / 92%);
   --whatsapp: oklch(0.67 0.17 150);
   --whatsapp-foreground: oklch(0.99 0 0);
   --shadow-luxe: 0 18px 60px oklch(0.05 0 0 / 45%);
@@ -166,10 +166,10 @@
 }
 
 @utility bg-hero { background: linear-gradient(180deg, oklch(0.1 0 0 / 25%), oklch(0.1 0 0 / 58%) 55%, var(--background)); }
-@utility hero-background { background-image: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+@utility hero-background { background-image: url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"); background-position: center; background-size: cover; background-repeat: no-repeat; }
 @utility bg-image-overlay { background: linear-gradient(180deg, transparent 20%, oklch(0.08 0 0 / 90%)); }
 @utility glass-panel { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(18px) saturate(120%); }
-@utility nav-link { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted-foreground); transition: color 200ms ease; &:hover { color: var(--primary); } }
+@utility nav-link { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: oklch(1 0 0); transition: color 200ms ease; &:hover { color: var(--primary); } }
 @utility label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.24em; color: var(--primary); font-weight: 600; }
 @utility display-title { font-family: var(--font-display); font-size: clamp(2.7rem, 6vw, 5.6rem); line-height: 1.03; font-weight: 500; }
 @utility project-shimmer { position: relative; overflow: hidden; &::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 25%, oklch(1 0 0 / 18%) 48%, transparent 70%); transform: translateX(-120%); transition: transform 800ms ease; } &:hover::after { transform: translateX(120%); } }
